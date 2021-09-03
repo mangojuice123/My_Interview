@@ -88,7 +88,7 @@
     }
     ```
 2. 死锁
-    - ![死锁](https://user-images.githubusercontent.com/57697266/132000761-f9a36f3b-768b-4ce5-b34f-469ed4aae0bc.png)
+    - ![死锁](https://user-images.githubusercontent.com/57697266/132002155-d30e4a04-8834-484e-a1cb-14383fe8ec25.png)
 
     ```
     new EaterThread("Alice", spoon, fork).start();
