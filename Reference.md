@@ -1,8 +1,6 @@
-- [What's this?](#what-s-this-)
-- [Why?](#why-)
+- [What's this?](#whats-this)
+- [Why?](#why)
 - [Content](#content)
-  * [Java](#java)
-  * [计算机网络](#-----)
 
 2021年7月26日
 # What's this?
