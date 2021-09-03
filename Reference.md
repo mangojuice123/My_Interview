@@ -14,7 +14,7 @@
 1. [Java 八股文](https://zhuanlan.zhihu.com/p/388492859)
 1. JVM
     * [JVM ( java virtual machine) architecture - tutorial](https://www.youtube.com/watch?v=ZBJ0u9MaKtM)
-2. 垃圾回收机制（GC）
+2. Garbage Collection 
     * [一个面试官对面试问题的分析](https://www.iteye.com/blog/icyfenix-715301)
     * [Garbage collection in Java, with Animation and discussion of G1 GC](https://www.youtube.com/watch?v=UnaNQgzw4zY)
 3. [Java Multithreding FAQ](https://www.zhihu.com/question/22375509/answer/21161626)
