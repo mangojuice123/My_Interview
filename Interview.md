@@ -88,6 +88,37 @@
     }
     ```
 2. 死锁
+    - ![死锁](https://user-images.githubusercontent.com/57697266/132000761-f9a36f3b-768b-4ce5-b34f-469ed4aae0bc.png)
+
+    ```
+    new EaterThread("Alice", spoon, fork).start();
+    new EaterThread("Bobby", fork, spoon).start();
+    
+    class EaterThread extends Thread {
+        private final Tool leftHand;
+        private final Tool rightHand;
+        public EaterThread(Tool leftHand, Tool rightHand) {
+            this.leftHand = leftHand;
+            this.rightHand = rightHand;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                eat();
+            }
+        }
+
+        public void eat() {
+            synchronized(leftHand) {
+                // 使用左边的餐具
+                synchronized(rightHand) {
+                    // 使用右边的餐具
+                }
+            }
+        }
+    }
+    ```
 ---
 # TCP/IP
 
