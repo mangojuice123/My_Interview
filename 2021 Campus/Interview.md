@@ -135,7 +135,8 @@
 ### 3. Java 内存模型与线程
 1. volatile
     - 某个线程对 volatile 字段进行的写操作结果对其他线程立即可见
-    - [禁止指令重排序优化](https://stackoverflow.com/questions/16213443/instruction-reordering-happens-before-relationship-in-java)
+    - [禁止指令重排序优化（对象的构造过程不是原子性的）](https://www.cnblogs.com/paddix/p/5428507.html)
+    - [单例模式的线程安全](https://zhuanlan.zhihu.com/p/52316864)
 
     ```
     public class Singleton {
@@ -145,7 +146,8 @@
             if (instance == null) {
                 synchronized (Single.class) {
                     if (instance == null) {
-                        instance = new Singleton();
+                        // 如果没有 volatile 关键字，那么执行对象构造的过程中可能出现指令重排
+                        instance = new Singleton(); 
                     }
                 }
             }
@@ -159,7 +161,7 @@
         - volatile
         - synchronized
         - final
-    - 有序性：如果在本线程内观察，所有的操作都是有序的（Within-Thread As-If-Serial Semantics）；如果在一个线程中观察另一个线程，所有的操作都是无序的（指令重排序以及工作内存与主存同步延迟）
+    - [有序性](https://stackoverflow.com/questions/16213443/instruction-reordering-happens-before-relationship-in-java)：如果在本线程内观察，所有的操作都是有序的（Within-Thread As-If-Serial Semantics）；如果在一个线程中观察另一个线程，所有的操作都是无序的（指令重排序以及工作内存与主存同步延迟）
 ---
 # TCP/IP
 
