@@ -2,6 +2,11 @@
     - [1. 覆盖和重载的区别](#1-覆盖和重载的区别)
     - [2.（堆）内存泄漏和内存溢出的区别、原因、举例](#2堆内存泄漏和内存溢出的区别原因举例)
   - [3. 内存泄漏的增多，最终会导致内存溢出](#3-内存泄漏的增多最终会导致内存溢出)
+- [JVM](#jvm)
+    - [1. Garbage Collection](#1-garbage-collection)
+      - [1. 什么时候进行 GC](#1-什么时候进行-gc)
+      - [2. 对什么东西进行 GC](#2-对什么东西进行-gc)
+      - [3. GC 具体做了什么事情](#3-gc-具体做了什么事情)
 - [Java Multithreading](#java-multithreading)
     - [1. 进程与线程的区别](#1-进程与线程的区别)
     - [2. 为什么使用锁来同步和保护资源](#2-为什么使用锁来同步和保护资源)
@@ -70,10 +75,51 @@
     ```
 2. Memory Overflow
     - 导致 OutOfMemory 异常的对象是必要的。（申请内存时，没有足够的内存可用）
+    - GC 时间过久（98%）
     - 原因
         - Java 虚拟机的堆参数 `-Xmx -Xms` 设置过小 ---> `java -Xms1m -Xmx1m xxx.java`
         - 代码中不合理的设计如对象生命周期过长、持有状态时间过长、存储结构设计不合理等情况
 3. 内存泄漏的增多，最终会导致内存溢出
+---
+# JVM
+
+### 1. Garbage Collection
+![Garbage Collection](https://user-images.githubusercontent.com/57697266/132183212-1f05bda6-08ad-4b49-82c9-cfa795f95608.png)
+
+#### 1. 什么时候进行 GC
+1. 大多数情况下，对象在 Young Generation 中的 Eden Space 中进行分配，当 Eden Space 中没有足够空间进行分配时，虚拟机将发起一次 Minor GC，在发生 Minor GC 之前，虚拟机必须先检查 Old Generation 最大连续可用空间是否大于**新生代所有对象总空间**或者**历次晋升平均大小**
+    - 大于，Minor GC
+    - 小于，Full GC
+2. OOM 的触发条件
+    - 内存泄漏
+    - [GC 与 非GC 耗时超过了 `GCTimeRatio` 的限制](http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html#par_gc.oom)
+3. 降低 GC 的调优策略
+    - `NewRatio` 调整新生代老年代比例
+    - `SurvivorRatio` 调整 Eden Space 和 Survivor Space 比例
+    - `MaxTenuringThreshold` 控制进入 Old Generation 前的生存次数 
+
+#### 2. 对什么东西进行 GC
+- 从 GC Root 开始搜索，搜索不到，而且经过第一次标记，清理后，仍然没有复活的对象
+
+#### 3. GC 具体做了什么事情
+- Young Generation
+    - Mark-Copy
+        - Eden Space : From Survivor : To Survivor = 8 : 1 : 1
+        - 每次 Young Generation 可用内存空间为 整个 Young Generation 的 90%
+    - Handle Promotion : 内存担保
+- Old Generation
+    - Mark-Compact
+        - 让所有存活的对象向内存空间一端移动，然后直接清理掉边界以外的内存
+        - 是一种移动式的回收算法
+- Concurrency Mark Sweep(CMS) Collector: 
+    1. CMS initial mark (Stop The World)
+    2. CMS concurrent mark
+    3. CMS remark (Stop The World)
+    4. CMS concurrent sweep
+    - 缺点：
+        1. 对处理器资源敏感
+        2. 无法处理浮动垃圾，导致 Full GC 的产生
+        3. 由于是基于 Mark-Sweep 算法的实现，导致收集结束时产生大量的空间碎片
 ---
 # Java Multithreading
 
