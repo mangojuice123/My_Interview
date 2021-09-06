@@ -99,6 +99,8 @@
     - `MaxTenuringThreshold` 控制进入 Old Generation 前的生存次数 
 
 #### 2. 对什么东西进行 GC
+- reference: 如果 reference 类型的数据中存储的数值代表的是另外一块内存的起始地址，就称该 reference 是代表某块内存、某个对象的引用
+    - `Object obj = new Object()` 只要这样的关系还存在，永远不会被 GC
 - 从 GC Root 开始搜索，搜索不到，而且经过第一次标记，清理后，仍然没有复活的对象
 
 #### 3. GC 具体做了什么事情
