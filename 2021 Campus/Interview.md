@@ -1,7 +1,6 @@
 - [Java Language](#java-language)
     - [1. 覆盖和重载的区别](#1-覆盖和重载的区别)
     - [2.（堆）内存泄漏和内存溢出的区别、原因、举例](#2堆内存泄漏和内存溢出的区别原因举例)
-  - [3. 内存泄漏的增多，最终会导致内存溢出](#3-内存泄漏的增多最终会导致内存溢出)
 - [JVM](#jvm)
     - [1. Garbage Collection](#1-garbage-collection)
       - [1. 什么时候进行 GC](#1-什么时候进行-gc)
@@ -18,12 +17,12 @@
     - [2. HTTP 与 HTTPS 的区别](#2-http-与-https-的区别)
     - [3. HTTPS 的实现](#3-https-的实现)
 
+
 # Java Language
 ### 1. 覆盖和重载的区别
 1. Overloading
     - 多个方法可以共享一个方法名，但是每个方法各自的参数不同，值得注意的是函数签名并不包括返回值类型，即不能通过只改变返回值类型来重载函数。
     - 比较典型的例子就是整型数字与整型数字相加的方法，浮点数与浮点数相加的方法，二者使用不同的参数，有着不同的返回值，却有着相同的方法名称。
-
     ```
     int myMethod(int x, int y) { }
     double myMethod(double x, double y) { }
@@ -31,7 +30,6 @@
 2. Overriding
     - 在某些特定情况下用一个实现替换另一个实现。覆盖一般是子类重新定义继承下来的方法，以改变或延伸此方法的行为。
     - Java 5 之前覆盖返回的类型必须一致，Java 5 之后覆盖函数的返回类型可以是基类方法返回值的派生类型。
-
     ```
     public class AnimalNoise {}
     public class Miaw extends AnimalNoise {}
@@ -61,7 +59,6 @@
         3. 单例模式，生命周期和 JVM 一致，如果单例对象持有外部对象的引用，那么这个外部对象也不会被回收
         4. 内部类的对象被长期持有，那么内部类对象所属的外部类对象也不会被回收
         5. `Hash` 值发生改变
-
     ```
     import java.util.*;
     public class Main {
@@ -82,12 +79,11 @@
         - Java 虚拟机的堆参数 `-Xmx -Xms` 设置过小 ---> `java -Xms1m -Xmx1m xxx.java`
         - 代码中不合理的设计如对象生命周期过长、持有状态时间过长、存储结构设计不合理等情况
 3. 内存泄漏的增多，最终会导致内存溢出
----
-# JVM
 
+
+# JVM
 ### 1. Garbage Collection
 ![Garbage Collection](https://user-images.githubusercontent.com/57697266/132183212-1f05bda6-08ad-4b49-82c9-cfa795f95608.png)
-
 #### 1. 什么时候进行 GC
 1. 大多数情况下，对象在 Young Generation 中的 Eden Space 中进行分配，当 Eden Space 中没有足够空间进行分配时，虚拟机将发起一次 Minor GC，在发生 Minor GC 之前，虚拟机必须先检查 Old Generation 最大连续可用空间是否大于**新生代所有对象总空间**或者**历次晋升平均大小**
     - 大于，Minor GC
@@ -99,12 +95,10 @@
     - `NewRatio` 调整新生代老年代比例
     - `SurvivorRatio` 调整 Eden Space 和 Survivor Space 比例
     - `MaxTenuringThreshold` 控制进入 Old Generation 前的生存次数 
-
 #### 2. 对什么东西进行 GC
 - reference: 如果 reference 类型的数据中存储的数值代表的是另外一块内存的起始地址，就称该 reference 是代表某块内存、某个对象的引用
     - `Object obj = new Object()` 只要这样的关系还存在，永远不会被 GC
 - 从 GC Root 开始搜索，搜索不到，而且经过第一次标记，清理后，仍然没有复活的对象
-
 #### 3. GC 具体做了什么事情
 - Young Generation
     - Mark-Copy
@@ -177,9 +171,8 @@ new Thread() {
     - 在 `分配` 这个动作上是线程独占的，其他方面则是共享的
     - TLAB 的空间其实并不大，所以大对象还是可能需要在堆内存中直接分配。那么，对象的内存分配步骤就是先尝试 TLAB 分配，空间不足之后，再判断是否应该直接进入老年代，然后再确定是再 Eden 分配还是在老年代分配。
 
----
-# Java Multithreading
 
+# Java Multithreading
 ### 1. 进程与线程的区别
 1. 进程与线程最大的区别就是**内存是否共享**
     - 每个进程都拥有彼此独立的内存空间
@@ -193,7 +186,6 @@ new Thread() {
 1. [race condition](https://stackoverflow.com/questions/34510/what-is-a-race-condition)
     - 当有多个线程存在，并且在同一时间访问共享数据时，会造成 race condition
     - 看起来好像这些线程在比赛抢着去访问这些数据一样
-
     ```
     if (x == 5) // The "Check"
     {
@@ -205,7 +197,6 @@ new Thread() {
     ```
 2. 死锁
     - ![死锁](https://user-images.githubusercontent.com/57697266/132002155-d30e4a04-8834-484e-a1cb-14383fe8ec25.png)
-
     ```
     new EaterThread("Alice", spoon, fork).start();
     new EaterThread("Bobby", fork, spoon).start();
@@ -235,12 +226,12 @@ new Thread() {
         }
     }
     ```
+
 ### 3. Java 内存模型与线程
 1. volatile
     - 某个线程对 volatile 字段进行的写操作结果对其他线程立即可见
     - [禁止指令重排序优化（对象的构造过程不是原子性的）](https://www.cnblogs.com/paddix/p/5428507.html)
     - [单例模式的线程安全](https://zhuanlan.zhihu.com/p/52316864)
-
     ```
     public class Singleton {
         private volatile static Singleton instance; // 注意 volatile 关键字 
@@ -265,31 +256,27 @@ new Thread() {
         - synchronized
         - final
     - [有序性](https://stackoverflow.com/questions/16213443/instruction-reordering-happens-before-relationship-in-java)：如果在本线程内观察，所有的操作都是有序的（Within-Thread As-If-Serial Semantics）；如果在一个线程中观察另一个线程，所有的操作都是无序的（指令重排序以及工作内存与主存同步延迟）
----
-# TCP/IP
 
+
+# TCP/IP
 ### 1. Web 的攻击技术
 1. 主动攻击：直接对服务器上对资源进行攻击，比较有代表性的是 `SQL 注入攻击` 和 `OS 命令注入攻击` 
     - SQL Injection 
         1. SQL Injection Based on `1 = 1` is Always True
-
         ```
         TxtUserID = getRequestString("UserID");
         txtSQL = "SELECT * FROM user WHERE user_id = " + txtUserId;
         ``` 
-
         ```
         > UserID: 105 OR 1 = 1
         SELECT * FROM user WHERE user_id = 105 OR 1 = 1;
         ```
         2. SQL Injection Based on `"" = ""` is Always True
         3. SQL Injection Based on Batched SQL Statements
-        
             ```
             > UserID: 105; DROP TABLE suppliers;
             ```
     - Use SQL Parameters for Protection
-
         ```
         txtUserId = getRequestString("UserId");
         txtSQL = "SELECT * FROM user WHERE user_id = @0";
