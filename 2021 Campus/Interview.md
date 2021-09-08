@@ -7,6 +7,8 @@
       - [1. 什么时候进行 GC](#1-什么时候进行-gc)
       - [2. 对什么东西进行 GC](#2-对什么东西进行-gc)
       - [3. GC 具体做了什么事情](#3-gc-具体做了什么事情)
+    - [2. 一个线程 OOM 后，其他线程是否能继续运行](#2-一个线程-oom-后其他线程是否能继续运行)
+    - [3. Java 对象的分配过程是如何保证线程安全的](#3-java-对象的分配过程是如何保证线程安全的)
 - [Java Multithreading](#java-multithreading)
     - [1. 进程与线程的区别](#1-进程与线程的区别)
     - [2. 为什么使用锁来同步和保护资源](#2-为什么使用锁来同步和保护资源)
@@ -122,6 +124,59 @@
         1. 对处理器资源敏感
         2. 无法处理浮动垃圾，导致 Full GC 的产生
         3. 由于是基于 Mark-Sweep 算法的实现，导致收集结束时产生大量的空间碎片
+
+### 2. [一个线程 OOM 后，其他线程是否能继续运行](https://zhuanlan.zhihu.com/p/151028855)
+```
+new Thread() {
+    @Override
+    public void run() {
+        int _1MB = 1024 * 1024;
+        List<byte[]> list = new ArrayList<>();
+        while (true) {
+            System.out.println(new Date().toString() + " " + Thread.currentThread().getName());
+            byte[]  b = new byte[1 * _1MB];
+            list.add(b);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+}.start();
+
+new Thread() {
+    @Override
+    public void run() {
+        while (true) {
+            // System.out.println(new Date().toString() + " " + Thread.currentThread().getName());
+            System.out.println(System.currentTimeMillis() + " " + Thread.currentThread().getName());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+}.start();
+```
+1. 线程一一直在分配对象，并且这些对象有强引用指着，所以线程一的运行过程中这部分内存一只无法回收，直到 Heap 满
+2. 触发 Full GC，尝试回收，发现无法回收，JVM 抛出 OOM
+3. 由于线程一没有 catch 这个 error，线程一退出
+4. 由于线程一中产生的对象已经没有强引用指着，这部分内存是线程一独占，因此当线程退出后，内存资源被释放
+5. 只要有一个非 deamon 线程存活，JVM 就不会退出
+
+### 3. Java 对象的分配过程是如何保证线程安全的
+1. Compare And Swap([CAS](https://www.jianshu.com/p/fb6e91b013cc))
+    - 当前内存值 `V`， 旧的预期值 `A`，准备设置的新值 `B`
+    - 当且仅当预期值 `A == V`，将内存值修改为 `B`，否则什么都不做
+2. [Thread Local Allocation Buffer(TLAB)](https://www.cnblogs.com/hollischuang/p/12453988.html)
+    - 在线程初始化时，虚拟机会为每个线程分配一块 TLAB 空间，只给当前线程使用，当需要分配内存时，就在自己的空间上分配，这样就不存在竞争的情况，可以大大提升分配效率。
+    - 在 `分配` 这个动作上是线程独占的，其他方面则是共享的
+    - TLAB 的空间其实并不大，所以大对象还是可能需要在堆内存中直接分配。那么，对象的内存分配步骤就是先尝试 TLAB 分配，空间不足之后，再判断是否应该直接进入老年代，然后再确定是再 Eden 分配还是在老年代分配。
+
 ---
 # Java Multithreading
 
