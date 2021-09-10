@@ -1,7 +1,6 @@
 - [Content](#content)
   - [汇总1](#汇总1)
   - [汇总2](#汇总2)
-  - [题目汇总](#题目汇总)
   - [Java](#java)
     - [1. 八股文](#1-八股文)
     - [2. JVM](#2-jvm)
@@ -21,7 +20,6 @@
 # Content
 ## [汇总1](https://github.com/jianghui-galaxy/Interview-Notebook)
 ## [汇总2](https://github.com/CyC2018/Interview-Notebook)
-## [题目汇总](https://zhuanlan.zhihu.com/p/394077360)
 
 
 ## Java
