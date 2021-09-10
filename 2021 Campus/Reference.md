@@ -1,6 +1,6 @@
 - [Content](#content)
-  - [汇总1](#汇总1)
-  - [汇总2](#汇总2)
+  - [面经答案1](#面经答案1)
+  - [面经答案2](#面经答案2)
   - [Java](#java)
     - [1. 八股文](#1-八股文)
     - [2. JVM](#2-jvm)
@@ -18,8 +18,8 @@
 
 
 # Content
-## [汇总1](https://github.com/jianghui-galaxy/Interview-Notebook)
-## [汇总2](https://github.com/CyC2018/Interview-Notebook)
+## [面经答案1](https://github.com/jianghui-galaxy/Interview-Notebook)
+## [面经答案2](https://github.com/CyC2018/Interview-Notebook)
 
 
 ## Java
