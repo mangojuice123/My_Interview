@@ -6,6 +6,7 @@
 - `小于主元的部分` | `等于主元的部分` | `大于主元的部分`
 ```
 def partition(self, nums, left, right):
+    # 随机选取主元
     import random
     pivot = random.randint(left, right)
     nums[left], nums[pivot] = nums[pivot], nums[left]
