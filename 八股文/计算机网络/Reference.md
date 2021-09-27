@@ -15,13 +15,16 @@
 ## TCP
 ![TCP header](https://upload.wikimedia.org/wikipedia/commons/d/da/TCP_header.png)
 ### 3-way handshake
+- [通俗易懂的三握手和四挥手](https://mp.weixin.qq.com/s/u56NcMs68sgi6uDpzJ61yw)
+- [RFC 793](https://www.ietf.org/rfc/rfc793.txt)
 - [为什么是三次](https://www.zhihu.com/question/24853633/answer/115173386)
 - [TCP 的 5 种报文](https://mp.weixin.qq.com/s/NIjxgx4NPn7FC4PfkHBAAQ)
 - [TCP connection status](https://www.ibm.com/docs/en/zos/2.1.0?topic=SSLTBW_2.1.0/com.ibm.zos.v2r1.halu101/constatus.htm)
+- [TCP 状态转换图总结](https://zhuanlan.zhihu.com/p/78540103)
 - [信道不可靠，但是通信双方需要就某个问题达成一致](https://groups.google.com/g/pongba/c/kF6O7-MFxM0/m/5S7zIJ4yqKUJ)
 - [Two General's Problem](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
 ### 4-way handshake 
-- [TIME_WAIT = 2 MSL](https://www.zhihu.com/question/67013338/answer/248375813)
+- [TIME_WAIT = 2 MSL(Maximum Segment Lifetime)](https://www.zhihu.com/question/67013338/answer/248375813)
 
 ## UDP
 ![UDP header](https://upload.wikimedia.org/wikipedia/commons/0/0c/UDP_header.png)
