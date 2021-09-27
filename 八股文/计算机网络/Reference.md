@@ -1,19 +1,44 @@
-- [传输层](#传输层)
-  - [3-way handshake](#3-way-handshake)
+- [传输层：对传输行为进行控制](#传输层对传输行为进行控制)
+  - [TCP](#tcp)
+    - [3-way handshake](#3-way-handshake)
+    - [4-way handshake](#4-way-handshake)
+  - [UDP](#udp)
+- [网络互连层：将 TCP 层传下来的数据加上目标地址和源地址](#网络互连层将-tcp-层传下来的数据加上目标地址和源地址)
 - [数据链路层](#数据链路层)
   - [MTU and MSS](#mtu-and-mss)
 
+
 </br></br>
 
-# 传输层
-## 3-way handshake
+
+# 传输层：对传输行为进行控制
+## TCP
+![TCP header](https://upload.wikimedia.org/wikipedia/commons/d/da/TCP_header.png)
+### 3-way handshake
 - [为什么是三次](https://www.zhihu.com/question/24853633/answer/115173386)
+- [TCP 的 5 种报文](https://mp.weixin.qq.com/s/NIjxgx4NPn7FC4PfkHBAAQ)
 - [TCP connection status](https://www.ibm.com/docs/en/zos/2.1.0?topic=SSLTBW_2.1.0/com.ibm.zos.v2r1.halu101/constatus.htm)
 - [信道不可靠，但是通信双方需要就某个问题达成一致](https://groups.google.com/g/pongba/c/kF6O7-MFxM0/m/5S7zIJ4yqKUJ)
 - [Two General's Problem](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
+### 4-way handshake 
+- [TIME_WAIT = 2 MSL](https://www.zhihu.com/question/67013338/answer/248375813)
+
+## UDP
+![UDP header](https://upload.wikimedia.org/wikipedia/commons/0/0c/UDP_header.png)
+
+
+</br></br>
+
+
+# 网络互连层：将 TCP 层传下来的数据加上目标地址和源地址
+![IP header](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/IPv4_Packet-en.svg/1280px-IPv4_Packet-en.svg.png)
+
+
+</br></br>
 
 
 # 数据链路层
+![Ethernet Type Frame](https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ethernet_Type_II_Frame_format.svg/1280px-Ethernet_Type_II_Frame_format.svg.png)
 ## MTU and MSS
 - [MTU = Maximum transmission unit](https://developer.aliyun.com/article/222535)
 - [MSS = Maximum segment size](https://www.zhihu.com/question/48454744/answer/110946313)
