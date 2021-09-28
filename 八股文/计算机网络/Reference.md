@@ -24,7 +24,7 @@
 - [Two General's Problem](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
 ### 4-way handshake 
 - [TIME_WAIT = 2 MSL(Maximum Segment Lifetime)](https://www.zhihu.com/question/67013338/answer/2005038284)
-- [为什么 TIME_WAIT = 2 MSL](https://cloud.tencent.com/developer/article/1450264)
+- [TIME_WAIT = 2 MSL 解决了什么问题](https://cloud.tencent.com/developer/article/1450264)
 
 ## UDP
 ![UDP header](https://upload.wikimedia.org/wikipedia/commons/0/0c/UDP_header.png)
