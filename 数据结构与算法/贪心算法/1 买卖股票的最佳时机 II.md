@@ -17,7 +17,7 @@
 # 测试用例
 
 # 题解
-1. 贪心
+1. 贪心算法 -> Best Time to Buy and Sell Stock II
 ```
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
@@ -29,7 +29,7 @@ class Solution:
         return profit
 ```
 
-2. One pass
+2. One pass -> Best Time to Buy and Sell Stock
 ```
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
