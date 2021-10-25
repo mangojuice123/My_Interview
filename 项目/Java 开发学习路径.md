@@ -8,3 +8,4 @@
     - 断点 + Debug。
 3. Spring：动手实现 IoC 。
     - 代码规范：项目代码编写完成后使用 javadoc 命令行工具或 IDEA 中的 Generate JavaDoc 生成注释文档。
+    - 测试单元编写及对应包的使用。
