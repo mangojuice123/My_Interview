@@ -1,7 +1,7 @@
 - [应用层](#应用层)
   - [HTTP](#http)
-  - [GET 与 POST](#get-与-post)
-  - [Cookie](#cookie)
+    - [GET 与 POST](#get-与-post)
+    - [Cookie](#cookie)
 - [传输层：对传输行为进行控制](#传输层对传输行为进行控制)
   - [TCP](#tcp)
     - [3-way handshake](#3-way-handshake)
@@ -38,11 +38,11 @@ HTTP/1.1 <Code> <Phrase>\r\n
 \r\n
 <Body Data....>
 ```
-## GET 与 POST
+### GET 与 POST
 - [GET 与 POST 的区别](https://www.zhihu.com/question/28586791/answer/767316172)
 - [URL 编码](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)
 
-## Cookie
+### Cookie
 - [Cookie 与 Session 的区别](https://www.zhihu.com/question/19786827/answer/84540780)
 - [Set-Cookie 与 Cookie](https://stackoverflow.com/questions/38485028/what-is-the-difference-between-set-cookie-and-cookie)
 
