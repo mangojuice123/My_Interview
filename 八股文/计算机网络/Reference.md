@@ -1,3 +1,5 @@
+- [应用层](#应用层)
+  - [HTTP](#http)
 - [传输层：对传输行为进行控制](#传输层对传输行为进行控制)
   - [TCP](#tcp)
     - [3-way handshake](#3-way-handshake)
@@ -10,6 +12,32 @@
 
 </br></br>
 
+
+# 应用层
+## HTTP
+```
+1. HTTP 请求报文
+
+<METHOD> <URL> HTTP/1.1\r\n
+<Header1>: <HeaderValue1>\r\n
+<Header2>: <HeaderValue2>\r\n
+...
+<HeaderN>: <HeaderValueN>\r\n
+\r\n
+<Body Data....>
+
+2. HTTP 响应报文
+
+HTTP/1.1 <Code> <Phrase>\r\n
+<Header1>: <HeaderValue1>\r\n
+<Header2>: <HeaderValue2>\r\n
+...
+<HeaderN>: <HeaderValueN>\r\n
+\r\n
+<Body Data....>
+```
+- [GET 与 POST](https://www.zhihu.com/question/28586791/answer/767316172)
+- [URL 编码](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html)
 
 # 传输层：对传输行为进行控制
 ## TCP
