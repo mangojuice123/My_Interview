@@ -2,6 +2,8 @@
   - [HTTP](#http)
     - [GET 与 POST](#get-与-post)
     - [Cookie](#cookie)
+  - [HTTPS](#https)
+    - [TLS](#tls)
 - [传输层：对传输行为进行控制](#传输层对传输行为进行控制)
   - [TCP](#tcp)
     - [3-way handshake](#3-way-handshake)
@@ -45,6 +47,15 @@ HTTP/1.1 <Code> <Phrase>\r\n
 ### Cookie
 - [Cookie 与 Session 的区别](https://www.zhihu.com/question/19786827/answer/84540780)
 - [Set-Cookie 与 Cookie](https://stackoverflow.com/questions/38485028/what-is-the-difference-between-set-cookie-and-cookie)
+
+## HTTPS
+### TLS
+- [TLS 握手流程](https://zhuanlan.zhihu.com/p/86304211)
+- [TLS 协议](https://cshihong.github.io/2019/05/09/SSL%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/)
+
+
+</br></br>
+
 
 # 传输层：对传输行为进行控制
 ## TCP
