@@ -1,0 +1,51 @@
+- [题目](#题目)
+- [Follow up](#follow-up)
+- [测试用例](#测试用例)
+- [题解](#题解)
+- [复杂度](#复杂度)
+- [公司](#公司)
+
+</br></br>
+
+# 题目
+- [NC92 最长公共子序列（二）](https://www.nowcoder.com/jump/super-jump/word?word=%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97)
+> 给定两个字符串 str1 和 str2，输出两个字符串的最长公共子序列。如果最长公共子序列为空，则返回 "-1"。目前给出的数据，仅仅会存在一个最长的公共子序列。
+
+# Follow up
+
+# 测试用例
+
+# 题解
+```
+class Solution:
+    def LCS(self , s1 , s2 ):
+        # write code here
+        m, n = len(s1), len(s2)
+        dp = [
+            ['' for i in range(n + 1)]
+            for _ in range(m + 1)
+        ]
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if s1[i - 1] == s2[j - 1]:
+                    # 只有都出现在两个字符串中的字符，才可以被添加到答案中。
+                    dp[i][j] = dp[i - 1][j - 1] + s1[i - 1]
+                else:
+                    if len(dp[i - 1][j]) > len(dp[i][j - 1]):
+                        dp[i][j] = dp[i - 1][j]
+                    else:
+                        dp[i][j] = dp[i][j - 1]
+                        
+        if dp[m][n] == '':
+            return -1
+        else:
+            # dp 的含义是：前 m 个和前 n 个字符串的最长公共序列。
+            return dp[m][n]
+```
+
+# 复杂度
+- 时间复杂度：`O(n^2)`
+- 空间复杂度：`O(n^2)`
+
+# 公司
+- 2021-11 小米
