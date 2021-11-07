@@ -2,6 +2,7 @@
   - [HTTP](#http)
     - [GET 与 POST](#get-与-post)
     - [Cookie](#cookie)
+    - [HTTP keep-alive](#http-keep-alive)
   - [HTTPS](#https)
     - [TLS](#tls)
 - [传输层：对传输行为进行控制](#传输层对传输行为进行控制)
@@ -47,6 +48,9 @@ HTTP/1.1 <Code> <Phrase>\r\n
 ### Cookie
 - [Cookie 与 Session 的区别](https://www.zhihu.com/question/19786827/answer/84540780)
 - [Set-Cookie 与 Cookie](https://stackoverflow.com/questions/38485028/what-is-the-difference-between-set-cookie-and-cookie)
+
+### HTTP keep-alive
+- [HTTP keep-alive 和 TCP keepalive](https://www.geek-share.com/detail/2795504664.html)
 
 ## HTTPS
 ### TLS
