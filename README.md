@@ -2,9 +2,13 @@
 
 # 做题节奏
 - 澄清题意
-- 说思路，过例子，想优化，分析复杂度
+- 说思路
+- 过例子
+- 想优化
+- 分析复杂度
 - Code
-- follow up
+
+# 八股文要点在于 why-what-how
 
 # 1. Done is better than perfect.
 
