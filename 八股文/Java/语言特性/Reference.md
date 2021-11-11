@@ -1,4 +1,5 @@
 - [Serialization](#serialization)
+- [String、StringBuilder、StringBuffer](#stringstringbuilderstringbuffer)
 
 
 </br></br>
@@ -10,3 +11,7 @@
 - [为什么需要序列化与反序列化](https://www.cnblogs.com/javazhiyin/p/11841374.html)
 - [serialVersionUID](https://zhuanlan.zhihu.com/p/84355040)
 - [HashMap 中的 transient 关键字](https://segmentfault.com/q/1010000000630486)
+
+# String、StringBuilder、StringBuffer
+- [String 的内存位置](https://blog.csdn.net/old_memories/article/details/78136602)
+- [为什么要问 StringBuild、StringBuffer](https://www.zhihu.com/question/50211894)
