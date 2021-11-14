@@ -33,4 +33,5 @@
 
 
 - [volatile 关键字](https://www.cnblogs.com/paddix/p/5428507.html)
+- [synchronized 关键字](https://www.cnblogs.com/paddix/p/5367116.html)
 - [Instruction reordering](https://stackoverflow.com/questions/16213443/instruction-reordering-happens-before-relationship-in-java)
