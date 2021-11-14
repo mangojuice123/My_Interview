@@ -18,6 +18,12 @@
 </br></br>
 
 
+- [从输入 URL 到页面加载完成到过程中都发生了什么事](http://fex.baidu.com/blog/2014/05/what-happen/)
+
+
+</br></br>
+
+
 # 应用层
 ## HTTP
 ```
