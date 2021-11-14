@@ -19,6 +19,7 @@
 # Garbage Collection
 - [一个面试官对面试问题的分析](https://www.iteye.com/blog/icyfenix-715301)
 - [Garbage collection in Java, with Animation and discussion of G1 GC](https://www.youtube.com/watch?v=UnaNQgzw4zY)
+- [一个线程 OOM 后，其他线程是否能继续运行](https://zhuanlan.zhihu.com/p/151028855)
 
 
 # Multithreading
