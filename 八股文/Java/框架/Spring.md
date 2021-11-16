@@ -47,6 +47,7 @@
 ## 讲讲 Spring Boot 自动装配原理
 答：
 1. Spring Boot 自动装配是什么
+  - Spring Boot 定义了一套接口规范，这套规范规定：Spring Boot 在启动时会扫描外部引用 JAR 包中的 `META-INF/spring.factories` 文件，将文件中配置的类型信息加载到 Spring 容器，并执行类中定义的各种操作。对于外部 JAR 来说，只需要按照 Spring Boot 定义的标准，就能将自己的功能装置进 Spring Boot。
   - 通过少量注解或者一些简单的配置就能在 Spring Boot 的帮助下实现某块功能。
 2. `starter` 工作流程：
    1. 搜索包含 `spring.factories` 文件的 JAR 包；
