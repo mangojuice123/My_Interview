@@ -2,6 +2,7 @@
   - [Spring 和 Spring Boot 的区别是什么？](#spring-和-spring-boot-的区别是什么)
   - [讲讲 Spring IoC 框架](#讲讲-spring-ioc-框架)
   - [讲讲 Spring AOP](#讲讲-spring-aop)
+  - [讲讲 Spring Boot 自动装配原理](#讲讲-spring-boot-自动装配原理)
 - [公司](#公司)
 
 
@@ -42,6 +43,15 @@
     - CGLib 代理：基于继承的机制实现。
   - AspectJ 采用静态织入方式。
     - ![](https://pic2.zhimg.com/v2-a4f70efe3e2bb0b438ea89a3ae927011_b.png)
+
+## 讲讲 Spring Boot 自动装配原理
+答：
+1. Spring Boot 自动装配是什么
+  - 通过少量注解或者一些简单的配置就能在 Spring Boot 的帮助下实现某块功能。
+2. `starter` 工作流程：
+   1. 搜索包含 `spring.factories` 文件的 JAR 包；
+   2. 根据 `spring.factories` 文件，加载自动配置类 `AutoConfiguration`；
+   3. 通过 `AutoConfiguration` 类，加载满足条件 `(@ConditionalOnXxxx)` 的 Bean 到 Spring IoC 容器中。
 
 
 </br></br>
