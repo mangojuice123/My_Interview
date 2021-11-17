@@ -16,3 +16,4 @@
 # 并发
 ## 事务的隔离级别
 - [MVCC + RR 为什么无法消除幻读](https://www.zhihu.com/question/334408495/answer/1704506785)
+- [事务的实现](https://segmentfault.com/a/1190000017888478)
