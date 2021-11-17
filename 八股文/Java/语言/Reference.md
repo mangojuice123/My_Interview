@@ -1,5 +1,6 @@
 - [Serialization](#serialization)
 - [String、StringBuilder、StringBuffer](#stringstringbuilderstringbuffer)
+- [Exception](#exception)
 
 
 </br></br>
@@ -15,3 +16,6 @@
 # String、StringBuilder、StringBuffer
 - [String 的内存位置](https://blog.csdn.net/old_memories/article/details/78136602)
 - [为什么要问 StringBuild、StringBuffer](https://www.zhihu.com/question/50211894)
+
+# Exception
+- [RuntimeException & Exception](https://stackoverflow.com/questions/2190161/difference-between-java-lang-runtimeexception-and-java-lang-exception)
