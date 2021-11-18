@@ -24,7 +24,8 @@
 ```
 public class Singleton {
     // 声明了一个 Singleton 类型的变量 singleton（还没有划分内存空间）。
-    public static volatile Singleton singleton;
+    // volatile 关键字一定要加上！
+    private static volatile Singleton singleton;
 
     /**
      * 构造函数私有，禁止外部实例化。
