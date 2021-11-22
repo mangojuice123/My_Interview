@@ -2,6 +2,7 @@
 - [注解](#注解)
 - [框架](#框架)
 - [项目](#项目)
+- [分布式](#分布式)
 
 
 </br></br>
@@ -21,3 +22,6 @@
 
 # 项目
 - [基于 Spring Boot 的在线 LeetCode](https://github.com/TangBean/OnlineExecutor)
+
+# 分布式
+- [负载均衡简单模拟](https://zhuanlan.zhihu.com/p/59154019)
