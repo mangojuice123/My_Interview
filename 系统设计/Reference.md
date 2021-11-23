@@ -17,6 +17,7 @@
 # 高并发设计
 - [系统如何支持高并发](https://zhuanlan.zhihu.com/p/95790423)
 - [CAP](https://www.ruanyifeng.com/blog/2018/07/cap.html)
+- [最终一致性](https://zhuanlan.zhihu.com/p/25933039)
 
 
 </br></br>
