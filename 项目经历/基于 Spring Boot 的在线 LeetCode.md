@@ -5,7 +5,7 @@
   - [实现运行模块](#实现运行模块)
   - [实现并发处理代码请求模块](#实现并发处理代码请求模块)
 - [系统高性能、高可用、可扩展](#系统高性能高可用可扩展)
-  - [](#)
+  - [Premature optimization is the root of all evils.](#premature-optimization-is-the-root-of-all-evils)
 
 
 </br></br>
@@ -76,4 +76,6 @@
 
 
 # 系统高性能、高可用、可扩展
-## 
+## Premature optimization is the root of all evils.
+- 根据系统特点，在上游进行服务器集群，负载均衡，以来提升用户体验。
+- 并不是高并发的情况，在用户量没有达到一定的情况下，不需要使用缓存来提升效率，反而会增加系统的复杂度。
