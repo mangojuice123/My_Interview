@@ -25,4 +25,4 @@
 
 
 # 分布式锁
-- [Redis 实现分布式锁](https://www.zhihu.com/question/452803310/answer/1931377239))
+- [Redis 实现分布式锁](https://www.zhihu.com/question/452803310/answer/1931377239)
