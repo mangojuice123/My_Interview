@@ -19,6 +19,7 @@
 - [CAP](https://www.ruanyifeng.com/blog/2018/07/cap.html)
 - [最终一致性](https://zhuanlan.zhihu.com/p/25933039)
 - [如何获得高并发经验](https://zhuanlan.zhihu.com/p/38552590)
+- [Raft](https://zhuanlan.zhihu.com/p/383555591)
 
 
 </br></br>
