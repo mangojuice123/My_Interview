@@ -1,5 +1,5 @@
 - [Serialization](#serialization)
-- [String、StringBuilder、StringBuffer](#stringstringbuilderstringbuffer)
+- [语言特性](#语言特性)
 - [Exception](#exception)
 
 
@@ -13,9 +13,10 @@
 - [serialVersionUID](https://zhuanlan.zhihu.com/p/84355040)
 - [HashMap 中的 transient 关键字](https://segmentfault.com/q/1010000000630486)
 
-# String、StringBuilder、StringBuffer
+# 语言特性
 - [String 的内存位置](https://blog.csdn.net/old_memories/article/details/78136602)
 - [为什么要问 StringBuild、StringBuffer](https://www.zhihu.com/question/50211894)
+- [hashCode() & equals()](https://www.cnblogs.com/skywang12345/p/3324958.html)
 
 # Exception
 - [RuntimeException & Exception](https://stackoverflow.com/questions/2190161/difference-between-java-lang-runtimeexception-and-java-lang-exception)
