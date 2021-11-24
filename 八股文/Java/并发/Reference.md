@@ -10,6 +10,7 @@
 - [HashMap & ConcurrentHashMap 结构分析](https://crossoverjie.top/2018/07/23/java-senior/ConcurrentHashMap/)
 - [HashMap 线程不安全](https://blog.csdn.net/swpu_ocean/article/details/88917958)
 - [HashMap 中的 transient](https://segmentfault.com/q/1010000000630486)
+- [HashMap 中链表和红黑树的转换](https://www.cnblogs.com/aaabbbcccddd/p/14849064.html)
 
 
 </br></br>
