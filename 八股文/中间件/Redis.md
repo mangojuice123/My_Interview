@@ -8,6 +8,7 @@
   - [讲讲 Redis 的过期策略及内存淘汰机制](#讲讲-redis-的过期策略及内存淘汰机制)
   - [讲讲 Redis 和数据库双写一致性](#讲讲-redis-和数据库双写一致性)
   - [Redis 支持哪几种数据类型？](#redis-支持哪几种数据类型)
+  - [RDB 和 AOF 的使用场景是什么？](#rdb-和-aof-的使用场景是什么)
 - [公司](#公司)
 
 
@@ -80,6 +81,16 @@
   - Hash：购物车（`hset [用户] [商品] [数量]`）；
   - Set：利用交集（`sinter`）等功能，计算共同喜好等；
   - Sorted Set：和 List 不同的是可以实现动态的排序，用作排行榜等。
+
+
+## RDB 和 AOF 的使用场景是什么？
+答：
+- RDB (Redis Database): The RDB persistence performs point-in-time snapshots of your dataset at specified intervals.
+  - RDB is a very compact single-file point-in-time representation of your Redis data.
+  - 体积小，内容全，非常适合充当 backup。
+- AOF (Append Only File):The AOF persistence logs every write operation received by the server, that will be played again at server startup, reconstructing the original dataset. 
+  - Using AOF Redis is much more durable: you can have different fsync policies: no fsync at all, fsync every second, fsync at every query.
+  - 最大程度减少数据丢失的可能。
 
 
 </br></br>
