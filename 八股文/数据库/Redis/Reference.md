@@ -1,2 +1,0 @@
-- [为什么要使用 Redis](https://zhuanlan.zhihu.com/p/59168140)
-- [Redis 五种数据结构](https://segmentfault.com/a/1190000022800471)
