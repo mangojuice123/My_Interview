@@ -1,6 +1,5 @@
 - [题目](#题目)
 - [Follow up](#follow-up)
-  - [LinkedHashMap 底层分析](#linkedhashmap-底层分析)
 - [测试用例](#测试用例)
 - [题解](#题解)
 - [复杂度](#复杂度)
@@ -11,13 +10,14 @@
 # 题目
 
 # Follow up
-## LinkedHashMap 底层分析
-- HashMap 是一个无序的 Map，每次根据 key 的 hashcode 映射到 Entry 数组上，遍历全部元素的顺序并不是写入的顺序。
-- LinkedHashMap 基于 HashMap 实现，在前者的基础上增加了双向链表的实现，提供了两种排序方式：
-  - 根据写入顺序排序（默认）
-  - 根据访问顺序排序（需要设置 accessOrder 为 true）
-- 根据访问顺序排序时，每次 get 都会将访问的值移动到链表末尾。
-  - 微信的转发消息机制就时 LRU 的一个应用。
+- LinkedList 分析：
+    - HashMap 是一个无序的 Map，每次根据 key 的 hashcode 映射到 Entry 数组上，遍历全部元素的顺序并不是写入的顺序。
+    - LinkedHashMap 基于 HashMap 实现，在前者的基础上增加了双向链表的实现，提供了两种排序方式：
+        - 根据写入顺序排序（默认）；
+        - 根据访问顺序排序（需要设置 accessOrder 为 true）。
+    - 根据访问顺序排序时，每次 get 都会将访问的值移动到链表末尾。
+      - 微信的转发消息机制就时 LRU 的一个应用。
+- 实现线程安全的 LRU （get、put 方法加锁）。
 
 # 测试用例
 
@@ -96,3 +96,5 @@ class LRUCache:
 - 空间复杂度：`O(n)`
 
 # 公司
+- 2021-11 字节跳动
+- 2021-9 阿里
