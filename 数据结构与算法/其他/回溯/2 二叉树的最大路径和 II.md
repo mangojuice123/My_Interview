@@ -34,11 +34,11 @@ class Solution:
                 if curSum == target:
                     res.append(path + [root.val])
                     return
+                    
             # 对于只有只有一个孩子的结点来说，会继续向有孩子的一边访问，另一边则会直接返回。
-            else:
-                # 对于相同父结点的孩子们来说，由上层传递来的消息都是一样的。
-                self.backtracking(root.left, curSum, target, res, path + [root.val])
-                self.backtracking(root.right, curSum, target, res, path + [root.val])
+            # 对于相同父结点的孩子们来说，由上层传递来的消息都是一样的。
+            self.backtracking(root.left, curSum, target, res, path + [root.val])
+            self.backtracking(root.right, curSum, target, res, path + [root.val])
 ```
 2. 求根结点到叶结点数字之和
 ```
